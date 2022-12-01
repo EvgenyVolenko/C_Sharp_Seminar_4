@@ -19,7 +19,7 @@ else
 {
     digit = Math.Abs(digit);
 
-    while (digit % 10 > 0)
+    while (digit > 0)
     {
         count++;
         digit /= 10;
