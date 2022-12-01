@@ -5,7 +5,6 @@
 
 Console.Clear();
 
-
 Console.Write("Введите положительное число A: ");
 int a = Convert.ToInt32(Console.ReadLine());
 int sum = 0;
@@ -20,4 +19,3 @@ else
     }
     Console.WriteLine($"Сумма чисел от 1 до {a} = {sum}");
 }
-
