@@ -15,7 +15,7 @@ while (true)
     else Console.Write("Ну просил же ЧИСЛО: ");
 }
 
-// sum = digit % 10;
+digit = Math.Abs(digit);
 
 while (digit > 0)
 {
