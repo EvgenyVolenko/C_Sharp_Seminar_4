@@ -12,6 +12,8 @@ for (int i = 0; i < array.Length; i++)
 
 PrintArray(array);
 
+Console.WriteLine($"[{string.Join(", ", array)}]"); // Хороший вариант печати данных массива на экран.
+
 void PrintArray (int[] col)
 {
     int count = col.Length;
