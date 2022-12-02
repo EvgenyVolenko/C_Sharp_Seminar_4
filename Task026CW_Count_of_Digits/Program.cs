@@ -4,25 +4,50 @@
 // 89126 -> 5
 
 Console.Clear();
-int digit, count = 0;
 
-Console.Write("Введите число A: ");
-
-while (true)
+int number = GetNumber("Введите неотрицательно число A: ");
+bool isCorrect = Validate(number);
+if (isCorrect == true)
 {
-    if (int.TryParse(Console.ReadLine(), out digit)) break;
-    else Console.Write("Ну просил же ЧИСЛО: ");
+    if (number == 0) Console.WriteLine("Колличество цифр в числе = 1");
+    else
+    {
+        int sum = SumFromDigits(number);
+        Console.WriteLine($"Колличество цифр в числе = {sum}");
+    }    
 }
-
-if (digit == 0) Console.WriteLine("Выводим число цифр в числе 1");
 else
 {
-    digit = Math.Abs(digit);
+    Console.WriteLine($"Невозможно получить колличество цифр.");
+}
 
-    while (digit > 0)
+int GetNumber(string message)
+{
+    int digit;
+    Console.Write(message);
+    if (int.TryParse(Console.ReadLine(), out digit)) return digit;
+    else return -1;
+}
+
+int SumFromDigits(int A)
+{
+    int count = 0;
+    while (A > 0)
     {
         count++;
-        digit /= 10;
+        A /= 10;
     }
-    Console.WriteLine($"Выводим число цифр в числе {count}");
+    return count;
+}
+
+bool Validate(int dig)
+{
+    if (dig >= 0) 
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
