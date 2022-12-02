@@ -25,8 +25,5 @@ int EnterDigit()
 
 void PrintArray (int[] col)
 {
-    for (int i = 0; i < col.Length; i++)
-    {
-        Console.WriteLine($"Позиция в массиве {i} значение {col[i]}.");
-    }
+    Console.WriteLine($"У нас получился следующий массив [{string.Join(", ", col)}]");
 }
